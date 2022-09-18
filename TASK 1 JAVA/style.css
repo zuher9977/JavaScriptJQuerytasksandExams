@@ -1,0 +1,73 @@
+body{
+    background-color: #eee;
+}
+
+.container{
+    background-color: #ffff;
+    margin: 50px;
+    height: 500px;
+}
+
+input[type=text]{
+    width: 500px;
+    height: 34px;
+    padding: 6px 12px;
+    font-size: 14px;
+    border: 1px solid #cccccc;
+    border-radius: 4px;
+    color: #555555;
+    }
+
+input[type=text]:focus{
+    border-color: #66afe9;
+    outline: 0;
+}
+
+.btn{
+    color: #ffffff; 
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ButtonSubmit{
+    background-color: #428bca;
+    border-color: #357ebd;
+    padding: 14px 10px;
+    
+    
+  }
+
+  .NewTaskBox{
+    float: left;
+    margin: 20px 10px 20px 30px;
+  }
+  .ActionBox{
+    float: left;
+    margin: 20px 0 20px 0;
+  }
+  .TabBox{
+    clear: left;
+    margin-left: 30px;
+  }
+
+  .tabItems{
+    margin-right: 10px;
+    color: #0000FF;
+}
+
+.tabItems:hover{
+    color: #800080;
+    cursor: pointer;
+}
+
+.TasksBox{
+    background-color: #eee;
+    margin: 10px 0 0 30px;
+    padding: 15px 10px;
+    width: 607px;
+}

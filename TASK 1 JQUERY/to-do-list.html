@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To-do List</title>
+        <link href="style.css" type="text/css" rel="stylesheet"/>
+
+        <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                $("#txtNewTask1").click(function(){
+                    debugger
+                    $("#Tasks").append("<div class = TasksBox ><input type = checkbox /><span class = Active >"+$("#txtNewTask").val()+"</span></div>")
+                })
+            
+
+                $("#Tasks").on("click","input",function(){
+                    debugger
+                    if ($(this).prop('checked')==true){
+                        $(this).parent().find("span").css('textDecoration','line-through')
+                    }
+                    else{
+                        $(this).parent().find("span").css('textDecoration','none')
+                    }
+                })
+
+                $("#active").click(function(){
+                    $("#Tasks input").each(function(){
+                        $(this).parent().show()
+                        if($(this).prop('checked')==true){
+                            $(this).parent().hide()
+                        }
+                    })
+                })
+                $("#inactive").click(function(){
+                    $("#Tasks input").each(function(){
+                        $(this).parent().show()
+                        if($(this).prop('checked')==false){
+                            $(this).parent().hide()
+                        }
+                    })
+                })
+
+                $("#all").click(function(){
+                    $("#Tasks input").each(function(){
+                        $(this).parent().show()
+                    })
+                })
+
+
+            })
+            
+
+
+
+        </script>
+       
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="NewTaskBox">
+                <input type="text" id="txtNewTask"  placeholder="New Task..." />
+            </div>
+            <div class="ActionBox">
+                <button id="txtNewTask1" class="btn ButtonSubmit" >New Task</button>
+            </div>
+            <div class="TabBox">
+                <span class="tabItems" id="all" >
+                    All
+                </span>
+                <span class="tabItems" id="active">
+                    Active
+                </span>
+                <span class="tabItems" id="inactive" >
+                    Completed
+                </span>
+            </div>
+            <div id="Tasks">
+            <!--<div class="TasksBox">
+                <input type="checkbox" />
+                <span class="Active">Create theme</span>
+            </div> -->
+        </div>
+        </div>
+
+    </body>
+</html>

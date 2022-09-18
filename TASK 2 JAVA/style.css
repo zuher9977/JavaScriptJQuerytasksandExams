@@ -1,0 +1,235 @@
+body{
+    background-color: #dde4e6;
+}
+
+.ContainerBox{
+    margin: 30px;
+}
+
+.menuBox{
+float: left;
+background-color: #ecf0f1;
+height: 500px;
+width: 300px;
+}
+.ContentBox{
+    float: left;
+    background-color: #ffff;
+    height: 500px;
+    width: 700px;
+}
+.HeaderLeftSide{
+    background-color: #2980b9;
+    height: 60px;
+    padding: 10px;
+}
+
+.HeaderimgBox{
+float: left;
+margin-right: 10px;
+}
+.HeaderInfoBox{
+    float: left;
+    margin-top: 10px;
+}
+
+.HeaderInfoBox span:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.HeaderInfoBox h5:hover{
+    text-decoration: underline;
+    cursor: pointer;
+}
+
+.HeaderInfoBox h5{
+    color: #ffff;
+    margin: 0;
+}
+
+.HeaderInfoBox span{
+     font-size: 12px;
+      color: #87e2e7;
+
+}
+
+.btn{
+    color: #ffffff; 
+    display: block;
+    border: 1px solid transparent;
+    border-radius: 4px;
+    font-size: 16px;
+    font-weight: normal;
+    text-align: center;
+    cursor: pointer;
+}
+
+.ComposeButton{
+    background-color: #428bca;
+    border-color: #357ebd;
+    padding: 12px 80px;
+  }
+  .ComposeButton:hover{
+  background-color: #3276b1;
+  border-color: #285e8e;
+}
+  .ComposeBox{
+    margin: 10px 30px;
+  }
+
+  .MenuItemBox{
+    margin-top: 30px;
+  }
+
+ .menueItem{
+    padding: 15px 0px 15px 35px;
+ }
+ .menueItem:hover{
+     background-color: #c0cdd1;
+     cursor: pointer;
+     text-decoration: underline;
+    }
+
+    .active{
+        background-color: #c0cdd1;
+        cursor: pointer;
+        text-decoration: underline;
+       }
+
+
+       .HeaderRightSide{
+        background-color: #3498db;
+        /* height: 80px; */
+        width: 642px;
+        padding: 29px;
+       }
+
+       .HeaderRightSide h3{
+           margin: 0;
+           color: #ffff;
+       }
+
+       .ActionsBox{
+        float: left;
+        margin-left: 15px;
+        border: 1px solid #e7e7e7;
+        padding: 5px 10px;
+        background: #fcfcfc;
+        color: #afafaf;
+        cursor: pointer;
+       }
+
+       .Container{
+        margin-top: 15px;
+       }
+       .ActionContainer{
+        overflow: hidden;
+       }
+
+       .ActionIcons{
+           width: 16px;
+       }
+       .MailBox
+       {
+        clear: left;
+        margin: 20px 11px;
+       }
+
+       .MailBox table{
+           border-collapse: collapse;
+           width: 100%;
+           border-spacing: 0;
+       }
+       .MailBox table td{
+           padding-top: 15px;
+           padding-bottom: 15px;
+           border-bottom: 1px solid #E6ECF3;
+
+       }
+
+       .MailBox table tr:hover{
+            background-color: #eee;
+            cursor: pointer;
+       }
+
+       .Unread{
+        background-color: #eee;
+       }
+
+       input[type=text]{
+        width: 80%;
+        height: 20px;
+        padding: 6px 12px;
+        font-size: 14px;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        color: #555555;
+        }
+    
+    input[type=text]:focus{
+        border-color: #66afe9;
+        outline: 0;
+    }
+
+    .InputBoxes{
+        margin-left: 20px;
+        margin-top: 20px;
+    }
+
+    .InputBoxes span{
+        margin-right: 20px;
+    }
+
+    textarea{
+        width: 90%;
+        height: 150px;
+        padding: 6px 12px;
+        font-size: 14px;
+        border: 1px solid #cccccc;
+        border-radius: 4px;
+        color: #555555;
+        }
+    
+        textarea:focus{
+        border-color: #66afe9;
+        outline: 0;
+    }
+
+    .textareaBox{
+        margin-left: 97px;
+    }
+
+    .actionBar{
+        margin-top: 2%;
+        height: 7%;
+    }
+    
+    .SaveChangesBox{
+        margin-left: 72%;
+        float: left;
+    }
+    .CancelBox{
+        margin-left: 1%;
+        float: left;
+    }
+    
+    .btn-default {
+        color: #333333;
+        background-color: #ffffff;
+        border-color: #cccccc;
+        width: 75px;
+        padding: 10px 0 10px 0;
+      }
+
+      .ButtonSubmit{
+        background-color: #428bca;
+        border-color: #357ebd;
+        padding: 10px 20px;
+        
+      }
+
+      .ButtonSubmit:hover{
+        background-color: #3276b1;
+        border-color: #285e8e;
+    }

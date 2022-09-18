@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>To-do List</title>
+        <link href="style.css" type="text/css" rel="stylesheet"/>
+        <script type="text/javascript">
+
+            function save(){
+                var text=document.getElementById("txtNewTask").value
+                var text_vale=document.createTextNode(text)
+                var div1=document.createElement("div")
+                div1.setAttribute("class","TasksBox")
+                var input=document.createElement("input")
+                input.setAttribute("type","checkbox")
+                input.setAttribute("onclick","check(this)")
+                div1.appendChild(input)
+                var span=document.createElement("span")
+                span.setAttribute("class","Active")
+                span.appendChild(text_vale)
+                div1.appendChild(span)
+                var maindiv=document.getElementById("Tasks")
+                maindiv.appendChild(div1)
+            }
+
+            function check(x){
+                debugger
+                if (x.checked==true){
+                    var div=x.parentNode
+                    var span=div.getElementsByTagName("span")[0].style.textDecoration="line-through"
+                }
+                else{
+                    var div=x.parentNode
+                    var span=div.getElementsByTagName("span")[0].style.textDecoration="none"
+                }
+            }
+
+
+            function active(){
+                var divMain=document.getElementById("Tasks")
+                var input=divMain.getElementsByTagName("input")
+                for(var i=0;i<input.length;i++){
+                    input[i].parentNode.style.display="block";
+                    if(input[i].checked == true){
+                        input[i].parentNode.style.display="none";
+                    }
+                }
+            }
+            function inactive(){
+                var divMain=document.getElementById("Tasks")
+                var input=divMain.getElementsByTagName("input")
+                for(var i=0;i<input.length;i++){
+                    input[i].parentNode.style.display="block";
+                    if(input[i].checked == false){
+                        input[i].parentNode.style.display="none";
+                    }
+                }
+            }
+            function All(){
+                debugger
+                var divMain=document.getElementsByClassName("TasksBox")
+                for(var i=0;i<divMain.length;i++){
+                    divMain[i].style.display="block";
+                }
+            }
+
+
+
+
+        </script>
+       
+    </head>
+    <body>
+        <div class="container">
+
+            <div class="NewTaskBox">
+                <input type="text" id="txtNewTask"  placeholder="New Task..." />
+            </div>
+            <div class="ActionBox">
+                <button id="txtNewTask" onclick="save()" class="btn ButtonSubmit" >New Task</button>
+            </div>
+            <div class="TabBox">
+                <span class="tabItems" onclick="All()" >
+                    All
+                </span>
+                <span class="tabItems" onclick="active()">
+                    Active
+                </span>
+                <span class="tabItems" onclick="inactive()" >
+                    Completed
+                </span>
+            </div>
+            <div id="Tasks">
+            <!--<div class="TasksBox">
+                <input type="checkbox" />
+                <span class="Active">Create theme</span>
+            </div> -->
+        </div>
+        </div>
+
+    </body>
+</html>

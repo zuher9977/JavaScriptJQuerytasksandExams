@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <link href="style.css" rel="stylesheet" type="text/css"/>
+        <script type="text/javascript" src="jquery-3.6.0.min.js"></script>
+        <script type="text/javascript">
+            $(document).ready(function(){
+
+                $("#checkboxInbox").click(function(){
+                    if($(this).prop('checked')==true){
+                        $("#Inbox table input").each(function(){
+                            $(this).prop('checked',true)
+                        })
+                    }
+                    else{
+                        $("#Inbox table input").each(function(){
+                            $(this).prop('checked',false)
+                        })
+                    }
+                })
+
+                $("#deleteAllInbox").click(function(){
+                    $("#Inbox table input").each(function(){
+                        if($(this).prop('checked')==true){
+                            $(this).parent().parent().remove()
+                        }
+                    })
+                })
+
+                $("#markAsReadAllInbox").click(function(){
+                    $("#Inbox table input").each(function(){
+                        if($(this).prop('checked')==true){
+                            $(this).parent().parent().removeClass('Unread')
+                        }
+                    })
+                })
+
+                $(".MarkAsReadInbox").click(function(){
+                    $(this).parent().removeClass('Unread')
+                })
+
+                $("#Inbox table tr").mouseenter(function(){
+                    $(this).find(".emailAction").show()
+                })
+                $("#Inbox table tr").mouseleave(function(){
+                    $(this).find(".emailAction").hide()
+                })
+
+                $(".deleteInbox").click(function(){
+                    $(this).parent().parent().parent().remove()
+                })
+
+                $(".MarkAsUnREAD").click(function(){
+                    $(this).parent().parent().parent().addClass('Unread')
+                })
+
+                $("#InboxMenu").click(function(){
+                    $("#Inbox").show()
+                    $("#SendEmail").hide()
+                    $("#SentMail").hide()
+                })
+                $("#composeshow").click(function(){
+                    $("#Inbox").hide()
+                    $("#SendEmail").show()
+                    $("#SentMail").hide()
+                })
+                $("#SentMenu").click(function(){
+                    $("#Inbox").hide()
+                    $("#SendEmail").hide()
+                    $("#SentMail").show()
+                })
+
+                $(".ButtonSubmit").click(function(){
+                    debugger
+                    $("#tblSent").append("<tr><td><input type = checkbox > </td><td>"+$("#txtTo").val()+"</td><td>"+$("#txtSubject").val()+"</td><td>"+new Date().toDateString()+"</td></tr>")
+                    $("#txtTo").val("")
+                    $("#txtSubject").val("")
+                    $("#txtBody").val("")
+                })
+
+                $("#checkSentEmail").click(function(){
+                    if($(this).prop('checked')==true){
+                        $("#tblSent input").prop('checked',true)
+                    }
+                    else{
+                        $("#tblSent input").prop('checked',false)
+                    }
+                })
+
+                $(".deleteAllSentmail").click(function(){
+                    debugger
+                    $("#tblSent input").each(function(){
+                        if($(this).prop('checked')==true){
+                            $(this).parent().parent().remove()
+                        }
+                    })
+                })
+
+                $(".cancel").click(function(){
+                    $("#Inbox").hide()
+                    $("#SendEmail").hide()
+                    $("#SentMail").show()
+                })
+            })
+        </script>
+
+
+    </head>
+    <body>
+        <div class="ContainerBox">
+        <div class="menuBox">
+            <div class="HeaderLeftSide">
+                <div class="HeaderimgBox">
+                    <img src="avatar1.png" style="width: 60px;" />
+                </div>
+                <div class="HeaderInfoBox">
+                    <h5>Jonathan Smith</h5>
+                    <span>jsmith@gmail.com</span>
+
+                </div>
+
+            </div>
+            <div class="ComposeBox">
+                <button class="btn ComposeButton" id="composeshow">compose</button>
+            </div>
+            <div class="MenuItemBox">
+                <div class="menueItem active" id="InboxMenu" >
+                <span>
+                    Inbox
+                </span>
+            </div>
+            <div class="menueItem" id="SentMenu">
+                <span>  
+                    Sent Mail
+                </span>
+            </div>
+            </div>
+        </div>
+        <div class="ContentBox">
+            <div class="HeaderRightSide">
+                <h3>Inbox</h3>
+            </div>
+            <div id="Inbox" class="Container">
+            <div class="ActionContainer">
+                <div class="ActionsBox" >
+                    <input type="checkbox" id="checkboxInbox" />All
+                </div>
+                <div class="ActionsBox">
+                    <img src="delete.png"  class="ActionIcons" id="deleteAllInbox" />
+                </div>
+                <div class="ActionsBox">
+                    <img src="mark_read.png" class="ActionIcons" id="markAsReadAllInbox"/>
+                </div>
+            </div>
+            <div class="MailBox">
+                <table>
+                    <colgroup style="width: 10%;"/>
+                    <colgroup style="width: 30%;"/>
+                    <colgroup style="width: 10%;"/>
+                    <colgroup style="width: 30%;"/>
+                    <colgroup style="width: 20%;"/>
+                    <tr class="Unread"  >
+                        <td>
+                            <input type="checkbox"/>
+                        </td>
+                        <td class="MarkAsReadInbox">
+                            JKribo@gmail.com
+                        </td>
+                        <td>
+                            <div class="emailAction" style="display: none;">
+                            <img src="delete.png" class="ActionIcons deleteInbox"  />
+                            <img src="mark_unread.png" class="ActionIcons MarkAsUnREAD"  />
+                        </div>
+                        </td>
+                        <td>
+                            JavaScript Task
+                        </td>
+                        <td>
+                            Sat Sep 04 2021
+                        </td>
+
+                    </tr>
+                    <tr class="Unread" >
+                        <td>
+                            <input type="checkbox"/>
+                        </td>
+                        <td class="MarkAsReadInbox">
+                            JKribo@gmail.com
+                        </td>
+                        <td>
+                            <div class="emailAction" style="display: none;">
+                            <img src="delete.png" class="ActionIcons deleteInbox"  />
+                            <img src="mark_unread.png" class="ActionIcons MarkAsUnREAD"  />
+                        </div>
+                        </td>
+                        <td>
+                            JavaScript Task#2
+                        </td>
+                        <td>
+                            Sat Sep 05 2021
+                        </td>
+
+                    </tr>
+                </table>
+
+            </div>
+        </div>
+        <div id="SendEmail" class="Container" style="display: none;">
+            <div class="InputBoxes">
+                <span style="margin-right: 50px;">To:</span>
+                <input type="text" placeholder="Type Email" id="txtTo" />
+            </div>
+            <div class="InputBoxes">
+                <span>Subject:</span>
+                <input type="text" placeholder="Type Subject" id="txtSubject" />
+            </div>
+            <div class="InputBoxes textareaBox">
+                <textarea id="txtBody"></textarea>
+            </div>
+            <div class="actionBar">
+                <div class="SaveChangesBox">
+                    <button class="btn ButtonSubmit" >Send</button>
+                </div>
+                <div class="CancelBox">
+                    <button class="btn btn-default cancel"  >Cancel</button>
+                </div>
+            </div>
+        </div>
+        <div id="SentMail" class="Container" style="display: none;">
+            <div class="ActionContainer">
+                <div class="ActionsBox">
+                    <input type="checkbox" id="checkSentEmail" />All
+                </div>
+                <div class="ActionsBox">
+                    <img src="delete.png" class="ActionIcons deleteAllSentmail" />
+                </div>
+            </div>
+            <div class="MailBox">
+                <table id="tblSent">
+                    <colgroup style="width: 10%;"/>
+                    <colgroup style="width: 35%;"/>
+                    <colgroup style="width: 35%;"/>
+                    <colgroup style="width: 20%;"/>
+			       
+                </table>
+
+            </div>
+        </div>
+
+        </div>
+    </div>
+    </body>
+</html>
